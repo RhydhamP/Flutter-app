@@ -5,11 +5,17 @@ import 'package:flutter_application_1/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  // const MyApp({super.key});
+  bool isDark = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +30,13 @@ class MyApp extends StatelessWidget {
     // final
 
     return MaterialApp(
-      themeMode: ThemeMode.light,
+      themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primaryColor: Colors.purple,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
       darkTheme: ThemeData(
+        primaryColor: Colors.green,
         brightness: Brightness.dark,
       ),
       // debugShowCheckedModeBanner: false,
