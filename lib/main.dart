@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_1/widgets/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,14 +31,8 @@ class _MyAppState extends State<MyApp> {
 
     return MaterialApp(
       themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
-      theme: ThemeData(
-        primaryColor: Colors.deepPurple,
-        fontFamily: GoogleFonts.lato().fontFamily,
-      ),
-      darkTheme: ThemeData(
-        primaryColor: Colors.green,
-        brightness: Brightness.dark,
-      ),
+      theme: MyTheme.ligthTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
       routes: {
