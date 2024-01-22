@@ -32,15 +32,15 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
       theme: ThemeData(
-        primaryColor: Colors.purple,
+        primaryColor: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
       darkTheme: ThemeData(
         primaryColor: Colors.green,
         brightness: Brightness.dark,
       ),
-      // debugShowCheckedModeBanner: false,
-      // initialRoute: "/home",
+      debugShowCheckedModeBanner: false,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
